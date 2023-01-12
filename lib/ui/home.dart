@@ -29,7 +29,10 @@ class _HomeState extends State<Home> {
   }
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
+
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Row(
@@ -69,14 +72,14 @@ class _HomeState extends State<Home> {
                   }),
             ),
             Container(
-              height: 600,
+              height: height/1.29,
               margin: EdgeInsets.only(top: 16),
               child: FutureBuilder(
                 future: NewsService().getApi(),
                 builder: (context, snapshot){
                   if(snapshot.hasData){
-                    print(snapshot.data!.articles!.length);
-                    print(snapshot.data!.status);
+                    // print(snapshot.data!.articles!.length);
+                    // print(snapshot.data!.status);
                     return ListView.builder(
                         // itemCount: 4,
                         itemCount: snapshot.data!.articles!.length,

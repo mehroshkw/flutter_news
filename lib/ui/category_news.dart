@@ -51,8 +51,8 @@ class _NewsCategoryState extends State<NewsCategory> {
             future: CategoryNewsService().getApi(widget.category),
             builder: (context, snapshot){
               if(snapshot.hasData){
-                print(snapshot.data!.articles!.length);
-                print(snapshot.data!.status);
+                // print(snapshot.data!.articles!.length);
+                // print(snapshot.data!.status);
                 return ListView.builder(
                   // itemCount: 4,
                     itemCount: snapshot.data!.articles!.length,

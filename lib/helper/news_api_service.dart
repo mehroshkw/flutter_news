@@ -9,14 +9,14 @@ class NewsService {
   final response = await http.get(Uri.parse("https://newsapi.org/v2/top-headlines?country=us&apiKey=3353fbbbffdf4bb393e6813e9dea573e"));
   var data = jsonDecode(response.body.toString());
   if(response.statusCode == 200){
-    print("Successfully called API");
+    // print("Successfully called API");
     // for(Map i in data){
     //   newsModel.add(News.fromJson(i));
     // }
     return News.fromJson(data);
   }else{
     return News.fromJson(data);
-    print("Error occured during api call");
+    // print("Error occured during api call");
   }
   }
 }
@@ -27,14 +27,14 @@ class CategoryNewsService {
     final response = await http.get(Uri.parse("https://newsapi.org/v2/top-headlines?country=us&category=$category&apiKey=3353fbbbffdf4bb393e6813e9dea573e"));
     var data = jsonDecode(response.body.toString());
     if(response.statusCode == 200){
-      print("Successfully called API");
+      // print("Successfully called API");
       // for(Map i in data){
       //   newsModel.add(News.fromJson(i));
       // }
       return News.fromJson(data);
     }else{
       return News.fromJson(data);
-      print("Error occured during api call");
+      // print("Error occured during api call");
     }
   }
 }
